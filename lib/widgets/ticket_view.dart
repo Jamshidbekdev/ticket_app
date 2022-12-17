@@ -6,9 +6,8 @@ import 'package:ticket_app/utils/app_styles.dart';
 import 'package:ticket_app/widgets/thick_container.dart';
 
 class TicketView extends StatelessWidget {
-  
-  final Map<String,dynamic> singleItem;
-  
+  final Map<String, dynamic> singleItem;
+
   const TicketView({super.key, required this.singleItem});
 
   @override
@@ -35,7 +34,9 @@ class TicketView extends StatelessWidget {
                     style: Styles.headLineStyle3.copyWith(color: Colors.white),
                   ),
                   const Spacer(),
-                  const ThickContainer(),
+                  const ThickContainer(
+                    color: Colors.white,
+                  ),
                   Expanded(
                       child: Stack(
                     children: [
@@ -67,7 +68,9 @@ class TicketView extends StatelessWidget {
                       ),
                     ],
                   )),
-                  const ThickContainer(),
+                  const ThickContainer(
+                    color: Colors.white,
+                  ),
                   const Spacer(),
                   Text(
                     singleItem['to']['code'],
@@ -154,65 +157,66 @@ class TicketView extends StatelessWidget {
             ),
           ),
           Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 10),
-              decoration: BoxDecoration(
-                  color: Styles.orangeColor,
-                  borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(21),
-                      bottomRight: Radius.circular(21))),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        singleItem['date'],
-                        style:
-                            Styles.headLineStyle3.copyWith(color: Colors.white),
-                      ),
-                      const Gap(5),
-                      Text(
-                        "Date",
-                        style:
-                            Styles.headLineStyle4.copyWith(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        singleItem['departure_time'],
-                        style:
-                            Styles.headLineStyle3.copyWith(color: Colors.white),
-                      ),
-                      const Gap(5),
-                      Text(
-                        "Depature Time",
-                        style:
-                            Styles.headLineStyle4.copyWith(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        singleItem["number"].toString(),
-                        style:
-                            Styles.headLineStyle3.copyWith(color: Colors.white),
-                      ),
-                      const Gap(5),
-                      Text(
-                        "Number",
-                        style:
-                            Styles.headLineStyle4.copyWith(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ],
-              ))
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            decoration: BoxDecoration(
+                color: Styles.orangeColor,
+                borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(21),
+                    bottomRight: Radius.circular(21))),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      singleItem['date'],
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.white),
+                    ),
+                    const Gap(5),
+                    Text(
+                      "Date",
+                      style:
+                          Styles.headLineStyle4.copyWith(color: Colors.white),
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      singleItem['departure_time'],
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.white),
+                    ),
+                    const Gap(5),
+                    Text(
+                      "Depature Time",
+                      style:
+                          Styles.headLineStyle4.copyWith(color: Colors.white),
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      singleItem["number"].toString(),
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.white),
+                    ),
+                    const Gap(5),
+                    Text(
+                      "Number",
+                      style:
+                          Styles.headLineStyle4.copyWith(color: Colors.white),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ]),
       ),
     );

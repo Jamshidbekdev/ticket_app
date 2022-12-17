@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket_app/utils/app_info_list.dart';
 import 'package:ticket_app/utils/app_styles.dart';
+import 'package:ticket_app/widgets/double_text_widget.dart';
 import 'package:ticket_app/widgets/hotel_view.dart';
 import 'package:ticket_app/widgets/ticket_view.dart';
 
@@ -76,26 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const Gap(40),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Upcoming Flights",
-                      style: Styles.headLineStyle2,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        // ignore: avoid_print
-                        print('Hello');
-                      },
-                      child: Text(
-                        "View all",
-                        style: Styles.textStyle
-                            .copyWith(color: Styles.primaryColor),
-                      ),
-                    )
-                  ],
-                ),
+                const AppDoubleText(firstText: "Upcoming Flights", secondText: "View all"),
               ],
             ),
           ),
